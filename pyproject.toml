@@ -15,7 +15,13 @@ dependencies = [
 ]
 
 [project.scripts]
-colorize = "transfer_learning.__main__:main"
+colorize = "transfer_learning:main"
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/transfer_learning"]
+only-include = ["src/transfer_learning.py"]
+sources = ["src"]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+]
